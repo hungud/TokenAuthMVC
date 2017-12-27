@@ -66,7 +66,7 @@ var SecurityManager = {
         var result = '';
 
         $.ajax({
-            url: '/ip',
+            url: '/TokenAuthMVC/ip',
             method: 'GET',
             async: false,
             success: function (ip) {

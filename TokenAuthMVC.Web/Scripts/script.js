@@ -9,6 +9,9 @@
 
     // Button click events.
     $('#btnLogin').click(function () {
+
+        debugger;
+
         // Login as the user and create a token key.
         SecurityManager.generate('john', 'password');
 
@@ -34,7 +37,7 @@
     $('#btnSearch').click(function () {
         var query = $('#txtQuery').val();
 
-        $.get('/api/find?q=' + query + '&token=' + SecurityManager.generate(), function (data) {
+        $.get('/TokenAuthMVC/api/find?q=' + query + '&token=' + SecurityManager.generate(), function (data) {
             var names = data.join(', ');
             $("#result").append('<p>' + names + '</p>');
         }).fail(function (error) {
