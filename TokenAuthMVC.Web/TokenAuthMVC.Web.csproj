@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,10 +85,13 @@
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\security.js" />
     <Content Include="Web.config" />
+    <Content Include="WebService1.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Attributes\RESTAuthorizeAttribute.cs" />
+    <Compile Include="Attributes\SoapAuthorizeExtension.cs" />
+    <Compile Include="Attributes\SoapAuthorizeAttribute.cs" />
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IpController.cs" />
@@ -95,6 +99,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebService1.asmx.cs">
+      <DependentUpon>WebService1.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
